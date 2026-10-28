@@ -1,0 +1,607 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box
+}
+
+:root {
+  --bg: #0a0b0b;
+  --bg2: #0e0f10;
+  --card: #121316;
+  --red: #e0182d;
+  --red-d: #c4000f;
+  --line: #3a3b3d;
+  --text: #e9e9e9;
+  --muted: #a9a9a9
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", Arial, sans-serif;
+  line-height: 1.7
+}
+
+a {
+  color: inherit;
+  text-decoration: none
+}
+
+ul {
+  list-style: none
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #1b1c1e
+}
+
+.container {
+  width: min(1540px, 100% - 64px);
+  margin: 0 auto
+}
+
+h1,
+h2,
+h3,
+.logo,
+.eyebrow,
+.btn,
+.menu a,
+.link,
+small,
+time,
+.brand span {
+  font-family: "Montserrat", Arial, sans-serif
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 44px;
+  line-height: 1.15
+}
+
+.red,
+.big span,
+.hero h1 span {
+  color: var(--red)
+}
+
+/* Butoane și linkuri */
+.btn {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: 13px;
+  font-weight: 500;
+  border: 1px solid transparent;
+  transition: background .2s
+}
+
+.btn-red {
+  background: var(--red-d);
+  color: #fff;
+  box-shadow: 0 0 24px rgba(224, 24, 45, .25)
+}
+
+.btn-red:hover {
+  background: var(--red)
+}
+
+.btn-ghost {
+  border-color: var(--line);
+  color: #fff
+}
+
+.btn-ghost:hover {
+  border-color: #fff
+}
+
+.btn-sm {
+  padding: 14px 25px
+}
+
+.btn-lg {
+  padding: 22px 40px;
+  font-size: 17px;
+  line-height: 23px;
+  letter-spacing: .14em
+}
+
+.link {
+  color: var(--red);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-size: 15px
+}
+
+.link:hover {
+  text-decoration: underline
+}
+
+/* Etichete */
+.eyebrow {
+  color: var(--red);
+  text-transform: uppercase;
+  letter-spacing: .4em;
+  font-size: 14px;
+  line-height: 1.2
+}
+
+.eyebrow-bar {
+  border-left: 3px solid var(--red-d);
+  padding: 8px 0 8px 21px;
+  margin-bottom: 18px
+}
+
+.eyebrow-line {
+  display: flex;
+  align-items: center;
+  gap: 14px
+}
+
+.eyebrow-line::before {
+  content: "";
+  width: 40px;
+  height: 2px;
+  background: var(--red)
+}
+
+.tag {
+  position: absolute;
+  z-index: 1;
+  background: var(--red-d);
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: 15px;
+  padding: 4px 16px;
+  font-family: "Montserrat", sans-serif
+}
+
+/* Header sticky */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10, 11, 11, .92);
+  backdrop-filter: blur(8px);
+  border-top: 2px solid #444
+}
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 78px
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 27px;
+  letter-spacing: .12em;
+  color: #fff
+}
+
+.logo span {
+  color: var(--red)
+}
+
+.menu {
+  display: flex;
+  gap: 40px
+}
+
+.menu a {
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  font-size: 18px;
+  color: var(--muted);
+  padding: 6px 0;
+  border-bottom: 2px solid transparent
+}
+
+.menu a:hover {
+  color: #fff
+}
+
+.menu a.active {
+  color: var(--red);
+  border-bottom-color: var(--red)
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  min-height: calc(100vh - 78px);
+  display: flex;
+  align-items: center;
+  background: linear-gradient(90deg, rgba(10, 11, 11, .85), rgba(10, 11, 11, .25)), linear-gradient(0deg, var(--bg), transparent 40%), url("../img/home/photo1-home.jpg") center/cover #151a24
+}
+
+.hero-inner {
+  position: relative;
+  padding-top: 50px;
+  padding-bottom: 60px
+}
+
+.hero h1 {
+  font-weight: 300;
+  font-size: clamp(72px, 6.3vw, 120px);
+  line-height: 1.08;
+  margin: 24px 0 30px
+}
+
+.hero-text {
+  max-width: 630px;
+  font-size: 24px;
+  color: #cfcfcf;
+  margin-bottom: 44px
+}
+
+.hero-btns {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 60px
+}
+
+.hero-stats {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap
+}
+
+.hero-stats strong {
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 1.2
+}
+
+.hero-stats span {
+  text-transform: uppercase;
+  font-size: 15px;
+  color: #ccc
+}
+
+.scroll {
+  position: absolute;
+  left: 50%;
+  bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: .15em;
+  font-size: 15px;
+  color: var(--muted)
+}
+
+/* Secțiuni */
+.section {
+  padding: 100px 0
+}
+
+.section-alt {
+  background: var(--bg2)
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 56px
+}
+
+.head .link {
+  margin-bottom: 24px
+}
+
+/* About */
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center
+}
+
+.big {
+  font-size: 60px;
+  line-height: 1.25;
+  margin-bottom: 36px
+}
+
+.about-text p {
+  font-size: 20px;
+  color: #bdbdbd;
+  margin-bottom: 28px
+}
+
+.about-cards {
+  display: grid;
+  gap: 30px
+}
+
+.feature {
+  display: flex;
+  gap: 28px;
+  border: 1px solid var(--line);
+  padding: 30px 36px;
+  min-height: 164px
+}
+
+.feature-red {
+  border-color: #5a1219;
+  box-shadow: 0 0 40px rgba(224, 24, 45, .08)
+}
+
+.f-icon {
+  font-size: 34px;
+  line-height: 1
+}
+
+.feature h3 {
+  font-weight: 400;
+  font-size: 24px;
+  margin-bottom: 12px
+}
+
+.feature em {
+  font-style: normal;
+  font-size: 19px;
+  color: var(--red);
+  margin-left: 10px
+}
+
+.feature p {
+  color: #bdbdbd;
+  font-size: 18px;
+  line-height: 1.6
+}
+
+/* Mărci */
+.brands {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px
+}
+
+.brand {
+  background: var(--card);
+  border: 1px solid var(--line);
+  text-align: center;
+  padding: 30px 10px;
+  transition: border-color .2s
+}
+
+.brand:hover {
+  border-color: var(--red)
+}
+
+.brand span {
+  display: block;
+  font-size: 42px;
+  line-height: 1.3;
+  color: #d8d8d8;
+  margin-bottom: 10px
+}
+
+.brand h3 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 19px
+}
+
+.brand p {
+  font-size: 15px;
+  color: var(--muted)
+}
+
+/* Mașini */
+.cars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px
+}
+
+.car {
+  border: 1px solid var(--line);
+  background: var(--bg)
+}
+
+.car-img,
+.post-img {
+  position: relative;
+  overflow: hidden
+}
+
+.car-img {
+  height: 260px
+}
+
+.car-img .tag {
+  top: 20px;
+  right: 20px
+}
+
+.car-body {
+  padding: 30px
+}
+
+.car h3 {
+  font-weight: 400;
+  font-size: 26px;
+  margin-bottom: 26px
+}
+
+.specs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 30px
+}
+
+.specs div {
+  border: 1px solid var(--line);
+  padding: 14px 15px;
+  font-size: 19px;
+  line-height: 1.5
+}
+
+.specs small {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--muted)
+}
+
+/* Galerie */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px
+}
+
+.gallery img {
+  aspect-ratio: 1/1
+}
+
+/* Blog */
+.posts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px
+}
+
+.post {
+  border: 1px solid #5a1219;
+  background: var(--bg)
+}
+
+.post-img {
+  height: 220px
+}
+
+.post-img .tag {
+  top: 20px;
+  left: 20px
+}
+
+.post-body {
+  padding: 30px
+}
+
+.post time {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  font-size: 16px;
+  color: #cfcfcf;
+  margin-bottom: 14px
+}
+
+.post h3 {
+  font-weight: 400;
+  font-size: 25px;
+  margin-bottom: 14px
+}
+
+.post p {
+  color: #bdbdbd;
+  font-size: 19px;
+  line-height: 1.6;
+  margin-bottom: 24px
+}
+
+/* Footer */
+.footer {
+  padding: 110px 0 40px
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 60px
+}
+
+.logo-light {
+  font-weight: 400
+}
+
+.menu-sm {
+  gap: 40px
+}
+
+.menu-sm a {
+  font-size: 16px
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: #cfcfcf;
+  font-size: 17px
+}
+
+/* Responsive */
+@media (max-width:1100px) {
+  .menu {
+    display: none
+  }
+
+  .about,
+  .posts {
+    grid-template-columns: 1fr
+  }
+
+  .brands {
+    grid-template-columns: repeat(3, 1fr)
+  }
+
+  .cars {
+    grid-template-columns: 1fr 1fr
+  }
+
+  .gallery {
+    grid-template-columns: 1fr 1fr
+  }
+}
+
+@media (max-width:640px) {
+
+  .cars,
+  .brands {
+    grid-template-columns: 1fr
+  }
+
+  h2 {
+    font-size: 34px
+  }
+
+  .big {
+    font-size: 40px
+  }
+
+  .head {
+    flex-direction: column;
+    align-items: flex-start
+  }
+
+  .scroll {
+    display: none
+  }
+}
